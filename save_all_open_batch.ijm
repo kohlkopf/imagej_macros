@@ -8,22 +8,15 @@
 requires("1.33s"); 
 dir = getDirectory("Choose a Directory ");
 
-function countFiles(dir) {
-    list = getFileList(dir);
-    for (i=0; i<list.length; i++) {
-        if (endsWith(list[i], "/"))
-            countFiles(""+dir+list[i]);
-        else
-            count++;
-   }
-}
-
-n=0
+n=0;
 
 for (i=1; i<=nImages; i++) { 
     selectImage(i);
+    print(n);
     showProgress(n++, nImages);
+    print(path);
     path = dir + getTitle;
+    print(path);
     processFile(path); 
 } 
 
